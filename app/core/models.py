@@ -22,6 +22,8 @@ class UserManager(BaseUserManager):
         user.save(using = self._db)
         return user
 
+    
+
 class User(AbstractBaseUser, PermissionsMixin):
     """Custom user model that supports email instead of username"""
     email = models.EmailField(max_length=255, unique = True)
